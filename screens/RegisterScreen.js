@@ -101,7 +101,7 @@ const RegisterScreen = () => {
           </Text>
         </View>
 
-        <View style={{ marginTop: 60 }} />
+        <View style={{ marginTop: 40 }} />
         <Pressable
           onPress={handleRegister}
           style={{
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    marginTop: 50,
+    marginTop: 40,
   },
   image: {
     width: 250,
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   input: {
-    color: 'gray',
+    color: 'blue',
     marginVertical: 10,
     width: 300,
   },

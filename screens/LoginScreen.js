@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   loginText: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop: 12,
+    marginTop: 10,
   },
   inputContainer: {
     marginTop: 50,
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   input: {
-    color: 'gray',
+    color: 'blue',
     marginVertical: 10,
     width: 300,
   },

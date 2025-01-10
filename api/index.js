@@ -8,6 +8,9 @@ const nodemailer = require('nodemailer')
 require('colors')
 dotenv.config()
 
+// routes importing:
+const userRouter = require('./routers/userRouters')
+
 const app = express()
 const PORT = process.env.PORT || 8000
 const MONGO_URI = process.env.MONGO_URI
@@ -19,6 +22,7 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // routes:
+app.use('/user', userRouter)
 
 app.get('/', (req, res) => {
   res.send('hello world')
