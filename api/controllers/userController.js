@@ -23,7 +23,7 @@ const registerUser = async (req, res) => {
     console.log('New User Registered:', newUser)
     // Send verification email to the user
     // Use your preferred email service or library to send the email
-    await sendVerificationEmail(newUser.email, newUser.verificationToken)
+    sendVerificationEmail(newUser.email, newUser.verificationToken)
 
     res.status(201).json({
       message:
@@ -126,9 +126,9 @@ const userProfile = async (req, res) => {
 
 module.exports = {
   registerUser,
-  verifyEmailToken,
   loginUser,
   addAddress,
   getAddresses,
   userProfile,
+  verifyEmailToken,
 }

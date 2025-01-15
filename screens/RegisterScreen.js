@@ -6,11 +6,13 @@ import {
   TextInput,
   View,
   Pressable,
+  Alert,
 } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { MaterialIcons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
+import axios from 'axios'
 
 const RegisterScreen = () => {
   const [email, setEmail] = useState('')
@@ -23,6 +25,25 @@ const RegisterScreen = () => {
       email: email,
       password: password,
     }
+    //send a POST  request to the backend API to register the user
+    axios
+      .post('http://192.168.1.8:8000/register', user)
+      .then((response) => {
+        console.log(response.data)
+        Alert.alert(
+          'Registration successful',
+          'You have been registered Successfully'
+        )
+        setName('')
+        setEmail('')
+        setPassword('')
+      })
+      .catch((error) => {
+        Alert.alert('Registration Error', 'An error occurred while registering')
+        console.log('registration failed', error)
+      })
+
+    navigation.replace('Login')
   }
   return (
     <SafeAreaView style={styles.container}>
